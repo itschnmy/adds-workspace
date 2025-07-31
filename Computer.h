@@ -7,7 +7,6 @@ private:
 public:
     Computer();
     char makeMove() override;
-    string getName() override;
 };
 
 #endif
