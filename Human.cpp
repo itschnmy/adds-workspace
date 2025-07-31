@@ -2,7 +2,7 @@
 #include "Human.h"
 using namespace std;
 
-Human::Human() : name("Human") {}
+Human::Human() : Player("Human") {}
 Human::Human(string name) : Player(name) {}
 
 char Human::makeMove() {

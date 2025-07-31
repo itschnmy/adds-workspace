@@ -2,7 +2,7 @@
 #include "Computer.h"
 using namespace std;
 
-Computer::Computer() : name("Computer") {}
+Computer::Computer() : Player("Computer") {}
 
 char Computer::makeMove() {
     return 'R';

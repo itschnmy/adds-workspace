@@ -7,6 +7,7 @@ public:
     Human();
     Human(std::string name);
     char makeMove() override;
+    std::string getName() override;
 };
 
 #endif

@@ -7,6 +7,7 @@ private:
 public:
     Computer();
     char makeMove() override;
+    std::string getName() override;
 };
 
 #endif
