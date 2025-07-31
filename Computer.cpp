@@ -7,3 +7,7 @@ Computer::Computer() : name("Computer") {}
 char Computer::makeMove() {
     return 'R';
 }
+
+string Computer::getName() {
+    return name;
+}
