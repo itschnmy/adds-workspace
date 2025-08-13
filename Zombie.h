@@ -5,7 +5,7 @@
 class Zombie : public Move {
 public:
     Zombie();
-    string getName() override;
+    std::string getName() override;
     int result(Move* other) override;
 };
 

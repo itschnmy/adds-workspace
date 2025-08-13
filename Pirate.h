@@ -1,11 +1,12 @@
 #ifndef PIRATE_H
 #define PIRATE_H
 #include "Move.h"
+#include <string>
 
 class Pirate : public Move {
 public:
     Pirate();
-    string getName() override;
+    std::string getName() override;
     int result(Move* other) override;
 };
 

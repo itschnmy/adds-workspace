@@ -3,12 +3,13 @@
 #include <string>
 
 class Move {
-private: 
-    string name;
+protected: 
+    std::string name;
 public:
-    Move();
-    virtual string getName();
+    Move(std::string name);
+    virtual std::string getName();
     virtual int result(Move* other) = 0;
+    virtual ~Move();
 };
 
 #endif

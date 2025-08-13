@@ -1,5 +1,6 @@
 #include "Monkey.h"
 #include <iostream>
+using namespace std;
 
 Monkey::Monkey() : Move("Monkey") {}
 string Monkey::getName() {

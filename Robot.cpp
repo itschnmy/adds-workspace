@@ -1,5 +1,6 @@
 #include "Robot.h"
 #include <iostream>
+using namespace std;
 
 Robot::Robot() : Move("Robot") {}
 string Robot::getName() {

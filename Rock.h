@@ -5,7 +5,7 @@
 class Rock : public Move {
 public:
     Rock();
-    string getName() override;
+    std::string getName() override;
     int result(Move* other) override;
 };
 

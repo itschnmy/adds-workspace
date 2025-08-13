@@ -1,5 +1,6 @@
 #include "Paper.h"
 #include <iostream>
+using namespace std;
 
 Paper::Paper() : Move("Paper") {}
 string Paper::getName() {

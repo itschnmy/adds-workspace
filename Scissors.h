@@ -5,7 +5,7 @@
 class Scissors : public Move {
 public:
     Scissors();
-    string getName() override;
+    std::string getName() override;
     int result(Move* other) override;
 };
 

@@ -1,5 +1,13 @@
 #include <iostream>
 #include "Human.h"
+#include "Monkey.h"
+#include "Ninja.h"
+#include "Paper.h"
+#include "Pirate.h"
+#include "Robot.h"
+#include "Rock.h"
+#include "Scissors.h"
+#include "Zombie.h"
 using namespace std;
 
 Human::Human() : Player("Human") {}
@@ -9,33 +17,24 @@ Move* Human::makeMove() {
     string move;
     cout << "Enter move: ";
     cin >> move;
-    switch(move) {
-    case "Rock":
+    if (move == "Rock") {
         return new Rock();
-        break;
-    case "Scissors":
-        return new Scissors();
-        break;
-    case "Paper":
+    } else if (move == "Paper") {
         return new Paper();
-        break;
-    case "Ninja":
-        return new Ninja();
-        break;
-    case "Pirate":
+    } else if (move == "Scissors") {
+        return new Scissors();
+    } else if (move == "Pirate") {
         return new Pirate();
-        break;
-    case "Monkey":
-        return new Monkey();
-        break;
-    case "Robot":
+    } else if (move == "Robot") {
         return new Robot();
-        break;
-    case "Zombie":
+    } else if (move == "Monkey") {
+        return new Monkey();
+    } else if (move == "Zombie") {
         return new Zombie();
-    default:
+    } else if (move == "Ninja") {
+        return new Ninja();
+    } else {
         return nullptr;
-        break;
     }
 }
 

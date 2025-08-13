@@ -1,5 +1,6 @@
 #include "Scissors.h"
 #include <iostream>
+using namespace std;
 
 Scissors::Scissors() : Move("Scissors") {}
 string Scissors::getName() {

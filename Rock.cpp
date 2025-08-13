@@ -1,5 +1,6 @@
 #include "Rock.h"
 #include <iostream>
+using namespace std;
 
 Rock::Rock() : Move("Rock") {}
 string Rock::getName() {

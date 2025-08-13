@@ -1,11 +1,12 @@
 #ifndef MONKEY_H
 #define MONKEY_H
 #include "Move.h"
+#include <string>
 
 class Monkey : public Move {
 public:
     Monkey();
-    string getName() override;
+    std::string getName() override;
     int result(Move* other) override;
 };
 

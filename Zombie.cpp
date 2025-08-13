@@ -1,5 +1,6 @@
 #include "Zombie.h"
 #include <iostream>
+using namespace std;
 
 Zombie::Zombie() : Move("Zombie") {}
 string Zombie::getName() {

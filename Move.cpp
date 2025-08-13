@@ -1,7 +1,11 @@
 #include "Move.h"
 #include <iostream>
+using namespace std;
 
-Move::Move() : name(name) {}
+Move::Move(string name) : name(name) {}
+
 string Move::getName() {
     return name;
 }
+
+Move::~Move() {}

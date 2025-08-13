@@ -1,5 +1,6 @@
 #include "Ninja.h"
 #include <iostream>
+using namespace std;
 
 Ninja::Ninja() : Move("Ninja") {}
 string Ninja::getName() {

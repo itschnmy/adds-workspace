@@ -1,5 +1,6 @@
 #include "Pirate.h"
 #include <iostream>
+using namespace std;
 
 Pirate::Pirate() : Move("Pirate") {}
 string Pirate::getName() {
