@@ -18,11 +18,8 @@ list<int> BigNumCalc::add(list<int> num1, list<int> num2) {
     while(i1 != num1.rend() || i2 != num2.rend() || store) {
         int n1 = *i1++;
         int n2 = *i2++;
-        if (i1 == num1.rend()) {
-            n1 = 0;
-        } else if (i2 == num2.rend()) {
-            n2 = 0;
-        }
+        if (i1 == num1.rend()) { n1 = 0; }
+        else if (i2 == num2.rend()) { n2 = 0; }
         int sum = n1 + n2 + store;
         l.push_front(sum % 10);
         store = sum / 10;

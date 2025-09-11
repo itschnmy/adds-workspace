@@ -78,20 +78,15 @@ bool LinkedList::deletePosition(int pos) {
 }
 
 int LinkedList::get(int pos) {
-    if (pos < 1) {
-        return numeric_limits<int>::max();
-    }
-    Node *i = head;
+    if (pos < 1) return numeric_limits<int>::max();
+
+    Node* i = head;
     int index = 1;
-    while (i->getLink() && index < pos - 1) {
+    while (i && index < pos) {
         i = i->getLink();
         index++;
     }
-    
-    if (!i->getLink()) {
-        return numeric_limits<int>::max();
-    }
-
+    if (!i) return numeric_limits<int>::max();
     return i->getData();
 }
 
