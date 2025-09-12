@@ -7,9 +7,7 @@ private:
     Node* link;
 public:
     Node(int value);
-    int getData();
-    Node* getLink();
-    void setLink(Node* next);
+    friend class LinkedList;
 };
 
 #endif
