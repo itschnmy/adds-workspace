@@ -49,9 +49,7 @@ void LinkedList::insertPosition(int pos, int newNum) {
 }
 
 bool LinkedList::deletePosition(int pos) {
-    if (!head || pos < 1) {
-        return false;
-    }
+    if (!head || pos < 1) return false;
 
     if (pos == 1) {
         Node* i = head;
@@ -67,9 +65,7 @@ bool LinkedList::deletePosition(int pos) {
         index++;
     }
 
-    if (!i->getLink()) {
-        return false;
-    }
+    if (!i->getLink()) return false;
 
     Node* del = i->getLink();
     i->setLink(del->getLink());
@@ -94,9 +90,7 @@ int LinkedList::search(int target) {
     Node* i = head;
     int pos = 1;
     while (i) {
-        if (i->getData() == target) {
-            return pos;
-        }
+        if (i->getData() == target) return pos;
         i = i->getLink();
         pos++;
     }

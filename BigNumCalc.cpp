@@ -1,5 +1,5 @@
 #include "BigNumCalc.h"
-#include <iostream>
+#include <vector>
 using namespace std;
 
 list<int> BigNumCalc::buildBigNum(string numString) {
@@ -12,15 +12,15 @@ list<int> BigNumCalc::buildBigNum(string numString) {
 
 list<int> BigNumCalc::add(list<int> num1, list<int> num2) {
     list<int> l;
-    auto i1 = num1.rbegin();
-    auto i2 = num2.rbegin();
+    vector<int> a(num1.begin(), num1.end());
+    vector<int> b(num2.begin(), num2.end());
     int store = 0;
-    while(i1 != num1.rend() || i2 != num2.rend() || store) {
-        int n1 = *i1++;
-        int n2 = *i2++;
-        if (i1 == num1.rend()) { n1 = 0; }
-        else if (i2 == num2.rend()) { n2 = 0; }
-        int sum = n1 + n2 + store;
+    int i = (int)a.size() - 1;
+    int j = (int)b.size() - 1;
+    while (i >= 0 || j >= 0 || store) {
+        int d1 = (i >= 0) ? a[i--] : 0;
+        int d2 = (j >= 0) ? b[j--] : 0;
+        int sum = d1 + d2 + store;
         l.push_front(sum % 10);
         store = sum / 10;
     }
@@ -29,39 +29,37 @@ list<int> BigNumCalc::add(list<int> num1, list<int> num2) {
 
 list<int>  BigNumCalc::sub(list<int> num1, list<int> num2) {
     list<int> l;
-    auto i1 = num1.rbegin();
-    auto i2 = num2.rbegin();
+    vector<int> a(num1.begin(), num1.end());
+    vector<int> b(num2.begin(), num2.end());
     int store = 0;
-    while(i1 != num1.rend()) {
-        int n1 = *i1 - store;
-        int n2 = *i2;
-        if (i2 == num2.rend()) {
-            n2 = 0;
-        }
-        if (n1 < n2) {
-            n1 += 10;
+    int i = (int)a.size() - 1;
+    int j = (int)b.size() - 1;
+    while (i >= 0) {
+        int d1 = a[i] - store;
+        int d2 = (j >= 0) ? b[j] : 0;
+        if (d1 < d2) {
+            d1 += 10;
             store = 1;
-        } else {
-            store = 0;
-        }
-        int sub = n1 - n2;
-        l.push_front(sub);
-        ++i1;
-        if (i2 != num2.rend()) {++i2;}
+        } else store = 0;
+        l.push_front(d1 - d2);
+        i--; 
+        j--;
     }
+    while (l.size() > 1 && l.front() == 0) l.pop_front();
     return l;
 }
 
 list<int> BigNumCalc::mul(list<int> num1, list<int> num2) {
     list<int> l;
+    vector<int> a(num1.begin(), num1.end());
     int mul = num2.front();
     int store = 0;
-    for (auto i = num1.rbegin(); i != num1.rend(); ++i) {
-        int product = *i * mul + store;
+    for (int i = (int)a.size() - 1; i >= 0; i--) {
+        int product = a[i] * mul + store;
         l.push_front(product % 10);
         store = product / 10;
     }
-    if (store) {l.push_front(store);}
+    if (store) l.push_front(store);
 
     return l;
 }
