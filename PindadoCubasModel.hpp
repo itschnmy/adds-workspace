@@ -3,11 +3,11 @@
 #include <cmath>
 #include "PhotovoltaicCell.hpp"
 using namespace std;
-
 //Calculate the current I via the Pindado-Cubas Model, which is the
 //equation 24 in  S.Pindado, J.Cubas/RenewableEnergy103(2017)729e738.
 //The value of eta is estimated by the Deihimi estimation, 
 //which also can be found in the same paper (eq. 23)
+
 class PindadoCubasModel {
 private:
     double h;

@@ -11,6 +11,7 @@ using namespace std;
 //was used to determine which panel on each axis has 
 //higher produced current. The explicit function for this feature
 //was written in Helper.hpp 
+
 class SunVector {
 private:
     array<double,6> I_measured;
